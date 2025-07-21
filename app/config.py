@@ -1,8 +1,8 @@
 import os
-from pydantic_settings import BaseSettings
+from pydantic import BaseSettings
 from dotenv import load_dotenv
 
-load_dotenv()  # Load environment variables from .env file
+load_dotenv()
 
 class Settings(BaseSettings):
     mongodb_url: str = os.getenv("MONGODB_URL", "mongodb://localhost:27017")
