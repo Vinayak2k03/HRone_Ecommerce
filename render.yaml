@@ -2,7 +2,7 @@ services:
   - type: web
     name: HRone_Ecommerce
     env: python
-    pythonVersion: 3.11.8  # Use a stable Python version
+    runtime: python3.11  # More reliable syntax for specifying Python version
     buildCommand: >
       pip install --upgrade pip &&
       pip install --only-binary :all: -r requirements.txt

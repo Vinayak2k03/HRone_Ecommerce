@@ -4,6 +4,7 @@ fastapi==0.104.1
 uvicorn[standard]==0.24.0
 motor==3.3.2
 pymongo==4.13.0
-pydantic==2.5.0
+# Use a compatible version with one of the available pydantic-core versions
+pydantic==2.7.1  # This uses pydantic-core 2.35.x which was in the available list
 pydantic-settings==2.1.0
 python-dotenv==1.0.0
