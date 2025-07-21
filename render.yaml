@@ -2,7 +2,7 @@ services:
   - type: web
     name: HRone_Ecommerce
     env: python
-    runtime: python3.11  # More reliable syntax for specifying Python version
+    pythonVersion: 3.11  # This is more likely to be supported by Render
     buildCommand: >
       pip install --upgrade pip &&
       pip install --only-binary :all: -r requirements.txt
