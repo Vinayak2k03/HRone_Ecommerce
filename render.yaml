@@ -2,9 +2,11 @@ services:
   - type: web
     name: HRone_Ecommerce
     env: python
-    runtime: python3
-    pythonVersion: 3.11.4
-    buildCommand: pip install -r requirements.txt
+    # Be explicit about Python version
+    pythonVersion: 3.11.4  
+    buildCommand: >
+      pip install --upgrade pip &&
+      pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: MONGODB_URL
