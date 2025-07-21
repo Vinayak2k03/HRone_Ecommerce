@@ -5,7 +5,7 @@ from app.schemas.product import ProductCreate
 
 async def create_product(product: ProductCreate) -> Dict[str, Any]:
     products_collection = get_collection("products")
-    product_dict = product.dict()
+    product_dict = product.model_dump()
     result = await products_collection.insert_one(product_dict)
     
     # Return just the ID as per requirement

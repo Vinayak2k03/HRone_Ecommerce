@@ -15,7 +15,7 @@ async def create_order(order: OrderCreate) -> Dict[str, Any]:
         if product:
             total += product["price"] * item.qty
     
-    order_dict = order.dict(by_alias=False)  # Use snake_case fields for DB
+    order_dict = order.model_dump(by_alias=False)  # Use snake_case fields for DB
     order_dict["total"] = total
     
     result = await orders_collection.insert_one(order_dict)
