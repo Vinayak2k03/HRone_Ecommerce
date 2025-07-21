@@ -2,8 +2,7 @@ services:
   - type: web
     name: HRone_Ecommerce
     env: python
-    # Be explicit about Python version
-    pythonVersion: 3.11.4  
+    runtime: python3.11  # Explicitly set runtime to python3.11
     buildCommand: >
       pip install --upgrade pip &&
       pip install -r requirements.txt
