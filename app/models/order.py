@@ -6,7 +6,7 @@ class OrderItem(BaseModel):
     qty: int
 
     class Config:
-        populate_by_name = True
+        allow_population_by_field_name = True  # Changed from populate_by_name
         arbitrary_types_allowed = True
 
 class OrderCreate(BaseModel):
@@ -14,7 +14,7 @@ class OrderCreate(BaseModel):
     items: List[OrderItem]
 
     class Config:
-        populate_by_name = True
+        allow_population_by_field_name = True  # Changed from populate_by_name
         arbitrary_types_allowed = True
 
 class OrderResponse(BaseModel):
